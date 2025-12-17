@@ -15,9 +15,9 @@ import PageLoader from "./components/PageLoader";
 import useAuthUser from "./hook/useAuthUser";
 import Layout from "./components/Layout";
 import { useThemeStore } from "./store/useThemeStore";
+import FriendsPage from "./pages/FriendsPage";
 
 const App = () => {
-  // CALL the hook (you had a bug: you weren't calling it)
   const { isLoading, authUser } = useAuthUser();
   const { theme } = useThemeStore();
 
@@ -38,6 +38,18 @@ const App = () => {
               </Layout>
             ) : (
               <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
+            )
+          }
+        />
+        <Route
+          path="/friends"
+          element={
+            isAuthenticated && isOnboarded ? (
+              <Layout showSidebar={true}>
+                <FriendsPage />
+              </Layout>
+            ) : (
+              <Navigate to="/login" />
             )
           }
         />
@@ -73,6 +85,7 @@ const App = () => {
             )
           }
         />
+
         <Route
           path="/call/:id"
           element={
