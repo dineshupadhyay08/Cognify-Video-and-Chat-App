@@ -1,56 +1,82 @@
 import { Link, useLocation } from "react-router";
 import useAuthUser from "../hook/useAuthUser";
-import { BellIcon, HomeIcon, ShipWheelIcon, UsersIcon } from "lucide-react";
+import {
+  BellIcon,
+  HomeIcon,
+  ShipWheelIcon,
+  UsersIcon,
+  XIcon,
+} from "lucide-react";
 
-const Sidebar = () => {
+const Sidebar = ({ isMobile = false, onClose }) => {
   const { authUser } = useAuthUser();
   const location = useLocation();
   const currentPath = location.pathname;
 
   return (
-    <aside className="w-64 bg-base-200 border-r border-base-300 hidden lg:flex flex-col h-screen sticky top-0">
-      <div className="p-5 border-b border-base-300">
+    <aside
+      className={`w-64 bg-base-200 border-r border-base-300 flex flex-col h-screen sticky top-0
+        ${isMobile ? "flex" : "hidden lg:flex"}
+      `}
+    >
+      {/* HEADER */}
+      <div className="p-5 border-b border-base-300 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
           <ShipWheelIcon className="size-9 text-primary" />
-          <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary  tracking-wider">
+          <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider">
             Cognify
           </span>
         </Link>
+
+        {/* ❌ CLOSE BUTTON (ONLY MOBILE) */}
+        {isMobile && (
+          <button
+            className="btn btn-ghost btn-circle"
+            onClick={onClose}
+            aria-label="Close menu"
+          >
+            <XIcon className="h-6 w-6" />
+          </button>
+        )}
       </div>
 
+      {/* NAV LINKS */}
       <nav className="flex-1 p-4 space-y-1">
         <Link
           to="/"
+          onClick={onClose}
           className={`btn btn-ghost justify-start w-full gap-3 px-3 normal-case ${
             currentPath === "/" ? "btn-active" : ""
           }`}
         >
-          <HomeIcon className="size-5 text-base-content opacity-70" />
+          <HomeIcon className="size-5 opacity-70" />
           <span>Home</span>
         </Link>
 
         <Link
           to="/friends"
+          onClick={onClose}
           className={`btn btn-ghost justify-start w-full gap-3 px-3 normal-case ${
             currentPath === "/friends" ? "btn-active" : ""
           }`}
         >
-          <UsersIcon className="size-5 text-base-content opacity-70" />
+          <UsersIcon className="size-5 opacity-70" />
           <span>Friends</span>
         </Link>
 
         <Link
           to="/notifications"
+          onClick={onClose}
           className={`btn btn-ghost justify-start w-full gap-3 px-3 normal-case ${
             currentPath === "/notifications" ? "btn-active" : ""
           }`}
         >
-          <BellIcon className="size-5 text-base-content opacity-70" />
+          <BellIcon className="size-5 opacity-70" />
           <span>Notifications</span>
         </Link>
       </nav>
 
-      {/* USER PROFILE SECTION */}
+      {/* USER PROFILE */}
       <div className="p-4 border-t border-base-300 mt-auto">
         <div className="flex items-center gap-3">
           <div className="avatar">
@@ -70,4 +96,5 @@ const Sidebar = () => {
     </aside>
   );
 };
+
 export default Sidebar;
