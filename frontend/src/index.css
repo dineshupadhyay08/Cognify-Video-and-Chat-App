@@ -18,6 +18,11 @@ body {
   @apply min-h-screen bg-base-100 text-base-content;
 }
 
+html.page-scroll-lock,
+body.page-scroll-lock {
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

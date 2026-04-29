@@ -15,7 +15,7 @@ const Sidebar = ({ isMobile = false, onClose }) => {
 
   return (
     <aside
-      className={`w-64 bg-base-200 border-r border-base-300 flex flex-col h-screen sticky top-0
+      className={`sticky top-0 h-screen w-64 shrink-0 overflow-hidden border-r border-base-300 bg-base-200 flex flex-col
         ${isMobile ? "flex" : "hidden lg:flex"}
       `}
     >

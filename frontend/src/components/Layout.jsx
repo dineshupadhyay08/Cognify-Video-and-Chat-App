@@ -1,13 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 
 const Layout = ({ children, showSidebar = false }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (!showSidebar) return;
+
+    document.documentElement.classList.add("page-scroll-lock");
+    document.body.classList.add("page-scroll-lock");
+
+    return () => {
+      document.documentElement.classList.remove("page-scroll-lock");
+      document.body.classList.remove("page-scroll-lock");
+    };
+  }, [showSidebar]);
+
   return (
-    <div className="min-h-screen bg-base-100">
-      <div className="flex min-h-screen">
+    <div className={showSidebar ? "h-screen overflow-hidden bg-base-100" : "min-h-screen bg-base-100"}>
+      <div className={showSidebar ? "flex h-full overflow-hidden" : "flex min-h-screen"}>
         {/* DESKTOP SIDEBAR */}
         {showSidebar && (
           <div className="hidden lg:block">
@@ -34,13 +46,13 @@ const Layout = ({ children, showSidebar = false }) => {
           </div>
         )}
 
-        <div className="flex-1 min-w-0 flex flex-col">
+        <div className={showSidebar ? "flex-1 min-w-0 flex h-full flex-col overflow-hidden" : "flex-1 min-w-0 flex flex-col"}>
           <Navbar
             showMenuIcon={showSidebar}
             onMenuClick={() => setIsMobileMenuOpen(true)}
           />
 
-          <main className="flex-1 min-h-0 overflow-y-auto bg-base-100">
+          <main className={showSidebar ? "flex-1 min-h-0 overflow-y-auto bg-base-100" : "flex-1 min-h-0 bg-base-100"}>
             {children}
           </main>
         </div>

@@ -17,8 +17,22 @@ const PORT = process.env.PORT || 4000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const allowedOrigins = new Set([
+  process.env.CLIENT_URL,
+  process.env.FRONTEND_URL,
+  "https://cognify-video-and-chat-app.onrender.com",
+].filter(Boolean));
+
 const isAllowedOrigin = (origin) => {
   if (!origin) return true;
+
+  if (allowedOrigins.has(origin)) {
+    return true;
+  }
+
+  if (/^https:\/\/[a-z0-9-]+\.onrender\.com$/i.test(origin)) {
+    return true;
+  }
 
   return /^https?:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin);
 };
@@ -32,7 +46,8 @@ app.use(
         return;
       }
 
-      callback(new Error("Not allowed by CORS"));
+      console.warn(`Blocked by CORS: ${origin}`);
+      callback(null, false);
     },
     credentials: true,
   })

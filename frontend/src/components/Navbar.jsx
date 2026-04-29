@@ -11,7 +11,7 @@ const Navbar = ({ showMenuIcon, onMenuClick }) => {
   const { logoutMutation } = useLogout();
 
   return (
-    <nav className="bg-base-200 border-b border-base-300 sticky top-0 z-30 h-16 flex items-center">
+    <nav className="sticky top-0 z-30 h-16 shrink-0 border-b border-base-300 bg-base-200/95 backdrop-blur flex items-center">
       <div className="container mx-auto px-4 flex items-center gap-3">
         {/* ☰ MENU ICON (ONLY MOBILE) */}
         {showMenuIcon && (
