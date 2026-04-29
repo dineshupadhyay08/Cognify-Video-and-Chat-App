@@ -6,8 +6,8 @@ const Layout = ({ children, showSidebar = false }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen">
-      <div className="flex">
+    <div className="min-h-screen bg-base-100">
+      <div className="flex min-h-screen">
         {/* DESKTOP SIDEBAR */}
         {showSidebar && (
           <div className="hidden lg:block">
@@ -34,13 +34,15 @@ const Layout = ({ children, showSidebar = false }) => {
           </div>
         )}
 
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 min-w-0 flex flex-col">
           <Navbar
             showMenuIcon={showSidebar}
             onMenuClick={() => setIsMobileMenuOpen(true)}
           />
 
-          <main className="flex-1 overflow-y-auto">{children}</main>
+          <main className="flex-1 min-h-0 overflow-y-auto bg-base-100">
+            {children}
+          </main>
         </div>
       </div>
     </div>

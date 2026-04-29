@@ -1,5 +1,5 @@
 // App.jsx
-import React, { useState } from "react";
+import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
@@ -24,10 +24,15 @@ const App = () => {
   const isAuthenticated = Boolean(authUser);
   const isOnboarded = Boolean(authUser?.isOnboarded);
 
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    document.body.setAttribute("data-theme", theme);
+  }, [theme]);
+
   if (isLoading) return <PageLoader />;
 
   return (
-    <div className="h-screen" data-theme={theme}>
+    <div className="min-h-screen bg-base-100 text-base-content antialiased">
       <Routes>
         <Route
           path="/"

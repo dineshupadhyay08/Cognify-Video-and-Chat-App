@@ -2,27 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html,
+body {
+  @apply m-0 p-0 font-sans antialiased bg-base-100 text-base-content;
+  overflow-x: hidden;
+}
+
+#root {
+  @apply min-h-screen bg-base-100 text-base-content;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-base-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-base-content/50 rounded-full;
+}
+
+.str-chat,
 .str-chat__channel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to bottom, #c9e8c9, #b7e7bb);
-  height: 100%;
+  @apply h-full bg-base-100 text-base-content;
 }
 
 .str-chat__container {
-  max-width: 1200px;
-  width: 100%;
-  height: 80% !important;
-  margin: 0 auto !important;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  @apply bg-base-100 border border-base-300/60 max-w-6xl w-full h-full mx-auto overflow-hidden rounded-none lg:rounded-lg shadow-xl;
+}
+
+.str-chat__main-panel,
+.str-chat__window,
+.str-chat__list,
+.str-chat__message-list-scroll,
+.str-chat__thread,
+.str-chat__thread-list {
+  @apply bg-base-100;
 }
 
 .str-chat__list {
-  background-color: #ffffff;
-  padding: 12px;
+  @apply p-3;
+}
+
+.str-chat__channel-header,
+.str-chat__thread-header,
+.str-chat__message-input {
+  @apply bg-base-100 border-base-300/60;
 }
 
 .str-chat__list-notifications {
@@ -30,5 +63,5 @@
 }
 
 .str-chat__message-input {
-  border-top: 1px solid #ddd;
+  @apply border-t;
 }

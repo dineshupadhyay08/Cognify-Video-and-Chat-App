@@ -16,11 +16,13 @@ const LoginPage = () => {
     loginMutation(loginData);
   };
 
+  const errorMessage =
+    error?.response?.data?.message ||
+    error?.message ||
+    "Login failed. Please try again.";
+
   return (
-    <div
-      className="h-screen flex items-center justify-center p-4 sm:p-6 md:p-8"
-      data-theme="forest"
-    >
+    <div className="min-h-screen bg-base-100 flex items-center justify-center p-4 sm:p-6 md:p-8">
       <div className="border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-base-100 rounded-xl shadow-lg overflow-hidden">
         {/* LOGIN FORM SECTION */}
         <div className="w-full lg:w-1/2 p-4 sm:p-8 flex flex-col">
@@ -35,7 +37,7 @@ const LoginPage = () => {
           {/* ERROR MESSAGE DISPLAY */}
           {error && (
             <div className="alert alert-error mb-4">
-              <span>{error.response.data.message}</span>
+              <span>{errorMessage}</span>
             </div>
           )}
 
@@ -58,6 +60,7 @@ const LoginPage = () => {
                       type="email"
                       placeholder="hello@example.com"
                       className="input input-bordered w-full"
+                      autoComplete="email"
                       value={loginData.email}
                       onChange={(e) =>
                         setLoginData({ ...loginData, email: e.target.value })
@@ -74,6 +77,7 @@ const LoginPage = () => {
                       type="password"
                       placeholder="••••••••"
                       className="input input-bordered w-full"
+                      autoComplete="current-password"
                       value={loginData.password}
                       onChange={(e) =>
                         setLoginData({ ...loginData, password: e.target.value })
