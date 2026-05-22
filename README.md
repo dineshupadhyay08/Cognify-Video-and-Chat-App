@@ -1,4 +1,3 @@
-sdf
 # Cognify - Video and Chat Application
 
 This project is a real-time video and chat application built using modern web technologies.  
