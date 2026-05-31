@@ -30,7 +30,7 @@ https://cognify-video-and-chat-app.onrender.com
 - Express  
 - Socket.IO (for real-time events)  
 - WebRTC / peer connection logic  
-- MongoDB (optional for saving users/messages)\
+- MongoDB (optional for saving users/messages)
 
 ### Frontend
 - React  
