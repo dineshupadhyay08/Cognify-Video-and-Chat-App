@@ -1,4 +1,4 @@
-# Cognify - Video and Chat Application     alksdfjklasdjf
+# Cognify - Video and Chat Application     alksdfjkla
 
 This project is a real-time video and chat application built using modern web technologies.  
 It supports live video communication and real-time messaging between users.
