@@ -5,7 +5,7 @@ It supports live video communication and real-time messaging between users.
 
 ---
 
-## 🔗 Live App for Android navigation bar bar he 
+## 🔗 Live App for Android navigation bar 
 
 **Live backend:**  
 https://cognify-video-and-chat-app.onrender.com  
