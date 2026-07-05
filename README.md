@@ -4,7 +4,6 @@ This project is a real-time video and chat application built using modern web te
 It supports live video communication and real-time messaging between users.
 
 ---
- sdf
 ## 🔗 Live App
 
 **Live backend:**  
