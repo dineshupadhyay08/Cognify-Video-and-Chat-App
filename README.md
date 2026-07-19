@@ -38,7 +38,7 @@ https://cognify-video-and-chat-app.onrender.com
 
 ---
 
-## 📁 Project Structure  of cards and help 🙌🏻 
+## 📁 Project Structure  of cards and
 
 ```text
 Cognify-Video-and-Chat-App/
