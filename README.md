@@ -38,7 +38,7 @@ https://cognify-video-and-chat-app.onrender.com
 
 ---
 
-## 📁 Project Structure  of
+## 📁 Project Structure 
 
 ```text
 Cognify-Video-and-Chat-App/
