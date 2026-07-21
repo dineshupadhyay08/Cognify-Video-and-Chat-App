@@ -3,7 +3,7 @@ This project is a real-time video and chat application built using modern web te
 It supports live video communication and real-time messaging between users.
 
 ---
-## 🔗 Live App hello bhaiya good night me
+## 🔗 Live App hello bhaiya good night
 
 **Live backend:**  
 https://cognify-video-and-chat-app.onrender.com  
