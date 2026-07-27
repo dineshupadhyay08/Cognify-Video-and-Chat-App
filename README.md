@@ -14,7 +14,7 @@ https://cognify-video-and-chat-app.onrender.com
 --- 
 
 ## 📌 Features
-
+ sinwah skladj
 - Real-time video communication  
 - Text messaging chat between users  
 - Responsive UI  
