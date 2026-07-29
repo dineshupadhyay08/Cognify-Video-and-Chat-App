@@ -24,7 +24,7 @@ https://cognify-video-and-chat-app.onrender.com
 
 ## 🧩 Tech Stack
 
-### Backend  develope
+### Backend  de
 - Node.js  
 - Express  
 - Socket.IO (for real-time events)  
