@@ -24,7 +24,7 @@ https://cognify-video-and-chat-app.onrender.com
 
 ## 🧩 Tech Stack
 
-### Backend
+### Backend  developer to unko btana he is 
 - Node.js  
 - Express  
 - Socket.IO (for real-time events)  
