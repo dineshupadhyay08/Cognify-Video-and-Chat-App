@@ -4,7 +4,7 @@ It supports live video communication and real-time messaging between users.
 
 --- 
 
-## 🔗 Live App   gghhuuiioo
+## 🔗 Live App   gghhuu
 
 **Live backend:**  
 https://cognify-video-and-chat-app.onrender.com  
