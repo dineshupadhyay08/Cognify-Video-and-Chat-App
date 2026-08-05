@@ -2,7 +2,7 @@
 This project is a real-time video and chat application built using modern web technologies.  
 It supports live video communication and real-time messaging between users.
 
----  hello i am dinesh upa
+---  hello i am dines
 
 ## 🔗 Live App 
 
