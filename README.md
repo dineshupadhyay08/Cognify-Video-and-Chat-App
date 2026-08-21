@@ -1,7 +1,7 @@
 # Cognify - Video and Chat Application 
 This project is a real-time video and chat application built using modern web technologies.  
 It supports live video communication and real-time messaging between users.
-if you don't mind me aski
+if you don't mind me 
 ---  
 
 ## 🔗 Live App 
