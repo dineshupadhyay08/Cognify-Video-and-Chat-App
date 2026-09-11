@@ -20,7 +20,7 @@ https://cognify-video-and-chat-app.onrender.com
 - Responsive UI  
 - Backend and frontend both deployed  
 
---- the same time pass poems and
+--- the same time pass poe
 
 ## 🧩 Tech Stack
 
