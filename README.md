@@ -11,7 +11,7 @@ https://cognify-video-and-chat-app.onrender.com
 
 > *If the app requires a sign-in or additional setup, launch in a browser to explore.*
 
----  alsdkfjalk alkdsjf asd a;ldkjklfj sdklj f
+---  alsdkfjalk alkdsjf asd a;ldkjklfj
 
 ## 📌 Features
  
