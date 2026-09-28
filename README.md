@@ -2,7 +2,7 @@
 This project is a real-time video and chat application built using modern web technologies.  
 It supports live video communication and real-time messaging between users.
 
---- me know when to expect when
+--- me know when to expect
 
 ## 🔗 Live App 
 
